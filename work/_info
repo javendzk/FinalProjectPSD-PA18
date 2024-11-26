@@ -1,0 +1,99 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/Modul 9/CS
+Eweather_station
+Z0 w1732519527
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 2
+Z4 dC:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18
+Z5 8C:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18/weather_station.vhd
+Z6 FC:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18/weather_station.vhd
+l0
+L5 1
+V2][:k7PheW8V>bzMoA4980
+!s100 CmzQo<GQf]mhnHScbL?@j0
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1732520105
+!i10b 1
+Z9 !s108 1732520105.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18/weather_station.vhd|
+Z11 !s107 C:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18/weather_station.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+Z14 DEx4 work 15 weather_station 0 22 2][:k7PheW8V>bzMoA4980
+!i122 2
+l20
+Z15 L16 13
+Z16 VVAX<15Y[nDPbGZ7`YjCEG1
+Z17 !s100 efI1<jJf6_M=9:7G;>HYh2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eweather_station_tb
+Z18 w1732519982
+Z19 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R1
+R2
+R3
+!i122 1
+R4
+Z20 8C:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18/weather_station_tb.vhd
+Z21 FC:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18/weather_station_tb.vhd
+l0
+L7 1
+VWT;f;WjkdjhRXI[0NVLh62
+!s100 SHBLfZ_m21lLm1eRK=TNn2
+R7
+32
+Z22 !s110 1732520102
+!i10b 1
+Z23 !s108 1732520102.000000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18/weather_station_tb.vhd|
+Z25 !s107 C:/Users/MSI/Documents/COOLEYEAHH/Semester 3/PSD/PRAKTIKUM/FinalProjectPSD-PA18/weather_station_tb.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R19
+R1
+R2
+R3
+DEx4 work 18 weather_station_tb 0 22 WT;f;WjkdjhRXI[0NVLh62
+!i122 1
+l36
+L10 79
+V3C7i4^^AI_oAek3l=eJKB3
+!s100 E2k1i2k7c8FD]ablX]@PZ0
+R7
+32
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R12
+R13
