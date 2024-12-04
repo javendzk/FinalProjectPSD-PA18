@@ -1,0 +1,85 @@
+{C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd} {0 {vcom -work work -2002 -explicit -stats=none {C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Weather_Control_Center
+-- Compiling architecture Behavioral of Weather_Control_Center
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(55): Target of signal assignment is not a signal.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(56): Target of signal assignment is not a signal.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(57): Target of signal assignment is not a signal.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(58): Target of signal assignment is not a signal.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(59): Target of signal assignment is not a signal.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(60): Target of signal assignment is not a signal.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(61): Target of signal assignment is not a signal.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(97): (vcom-1047) Actual (signal "opcode") for class variable formal "opcode" is not a variable.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(97): (vcom-1047) Actual (signal "status") for class variable formal "status" is not a variable.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(97): (vcom-1047) Actual (signal "source") for class variable formal "source" is not a variable.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(97): (vcom-1047) Actual (signal "timestamp") for class variable formal "timestamp" is not a variable.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(97): (vcom-1047) Actual (signal "temp_data") for class variable formal "temp_data" is not a variable.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(97): (vcom-1047) Actual (signal "light_data") for class variable formal "light_data" is not a variable.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(97): (vcom-1047) Actual (signal "moist_data") for class variable formal "moist_data" is not a variable.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(103): Expecting FUNCTION call returning state_type where PROCEDURE call was found.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(105): Expecting FUNCTION call returning state_type where PROCEDURE call was found.
+** Warning: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(105): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(106): (vcom-1600) No feasible entries for subprogram "write".
+   Visible subprograms are:
+      (implicit) TEXTIO.write[std.TEXTIO.TEXT, std.STANDARD.STRING] at $MODEL_TECH/../vhdl_src/std/textio.vhd(15)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BIT, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(123)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BIT_VECTOR, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(126)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BOOLEAN, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(129)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.CHARACTER, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(132)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, INTEGER, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(135)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.REAL, std.TEXTIO.SIDE, NATURAL, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(138)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.STRING, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(145)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.TIME, std.TEXTIO.SIDE, NATURAL, std.STANDARD.TIME] at $MODEL_TECH/../vhdl_src/std/textio.vhd(148)
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(107): (vcom-1600) No feasible entries for subprogram "write".
+   Visible subprograms are:
+      (implicit) TEXTIO.write[std.TEXTIO.TEXT, std.STANDARD.STRING] at $MODEL_TECH/../vhdl_src/std/textio.vhd(15)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BIT, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(123)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BIT_VECTOR, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(126)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BOOLEAN, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(129)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.CHARACTER, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(132)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, INTEGER, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(135)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.REAL, std.TEXTIO.SIDE, NATURAL, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(138)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.STRING, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(145)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.TIME, std.TEXTIO.SIDE, NATURAL, std.STANDARD.TIME] at $MODEL_TECH/../vhdl_src/std/textio.vhd(148)
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(108): (vcom-1600) No feasible entries for subprogram "write".
+   Visible subprograms are:
+      (implicit) TEXTIO.write[std.TEXTIO.TEXT, std.STANDARD.STRING] at $MODEL_TECH/../vhdl_src/std/textio.vhd(15)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BIT, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(123)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BIT_VECTOR, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(126)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BOOLEAN, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(129)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.CHARACTER, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(132)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, INTEGER, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(135)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.REAL, std.TEXTIO.SIDE, NATURAL, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(138)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.STRING, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(145)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.TIME, std.TEXTIO.SIDE, NATURAL, std.STANDARD.TIME] at $MODEL_TECH/../vhdl_src/std/textio.vhd(148)
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(109): (vcom-1600) No feasible entries for subprogram "write".
+   Visible subprograms are:
+      (implicit) TEXTIO.write[std.TEXTIO.TEXT, std.STANDARD.STRING] at $MODEL_TECH/../vhdl_src/std/textio.vhd(15)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BIT, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(123)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BIT_VECTOR, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(126)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, BOOLEAN, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(129)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.CHARACTER, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(132)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, INTEGER, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(135)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.REAL, std.TEXTIO.SIDE, NATURAL, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(138)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.STRING, std.TEXTIO.SIDE, NATURAL] at $MODEL_TECH/../vhdl_src/std/textio.vhd(145)
+      (explicit) TEXTIO.WRITE[std.TEXTIO.LINE, std.STANDARD.TIME, std.TEXTIO.SIDE, NATURAL, std.STANDARD.TIME] at $MODEL_TECH/../vhdl_src/std/textio.vhd(148)
+** Error: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(27): Variable declaration 'line_buffer' not allowed in this region.
+** Warning: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(102): (vcom-1272) Length of expected is 128; length of actual is 64.
+** Note: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd(118): VHDL Compiler exiting
+
+} {9.0 25.0 26.0 27.0 37.0 38.0 48.0 49.0 59.0 60.0 70.0 71.0} {}} {C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center_tb.vhd} {0 {vcom -work work -2002 -explicit -stats=none {C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center_tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity control_center_tb
+-- Compiling architecture behavior of Testbench
+** Error: (vcom-11) Could not find work.testbench.
+** Note: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center_tb.vhd(8): VHDL Compiler exiting
+
+} {9.0 10.0} {}}

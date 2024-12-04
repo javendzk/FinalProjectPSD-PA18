@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Econtrol_center_tb
+w1732698107
+Z0 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 2
+Z3 dC:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace
+8C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center_tb.vhd
+FC:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center_tb.vhd
+l0
+L5 1
+V@Eok0VXki^X7<b7_7P>_E2
+!s100 624_jUccbmQl7giG6f^gM1
+Z4 OV;C;2020.1;71
+32
+Z5 !s110 1733045610
+!i10b 1
+!s108 1733045610.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center_tb.vhd|
+!s107 C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center_tb.vhd|
+!i113 1
+Z6 o-work work -2002 -explicit
+Z7 tExplicit 1 CvgOpt 0
+Eweather_control_center
+w1733045605
+R0
+R1
+R2
+!i122 1
+R3
+8C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+FC:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+l0
+L6 1
+V^<H6Q3VA7AWzJc0Tz[[020
+!s100 ;H<Bo<7;k<`bzJ][UIoEW3
+R4
+32
+R5
+!i10b 1
+!s108 1733045609.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd|
+!s107 C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd|
+!i113 1
+R6
+R7
