@@ -10,45 +10,45 @@ z2
 cModel Technology
 dC:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)
 Eweather_station
-Z0 w1732606343
+Z0 w1733299817
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 4
+!i122 14
 Z4 dC:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/javen-workspace
 Z5 8C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/javen-workspace/weather_station.vhd
 Z6 FC:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/javen-workspace/weather_station.vhd
 l0
-L8 1
-Vk2EKD]<Sn^RjBJc8D`E1B0
-!s100 ]Vi4OD=F3MnW;<]mL^^bb2
+L5 1
+VPiakc088f6cGoJC]aVPf33
+!s100 7kOAcQ6MP4LB]PJXm9O2l0
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1732606347
+Z8 !s110 1733299828
 !i10b 1
-Z9 !s108 1732606347.000000
+Z9 !s108 1733299828.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/javen-workspace/weather_station.vhd|
-!s107 C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/javen-workspace/weather_station.vhd|
+Z11 !s107 C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/javen-workspace/weather_station.vhd|
 !i113 1
-Z11 o-work work -2002 -explicit
-Z12 tExplicit 1 CvgOpt 0
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
 Abehavioral
 R1
 R2
 R3
-DEx4 work 15 weather_station 0 22 k2EKD]<Sn^RjBJc8D`E1B0
-!i122 4
-l62
-L19 120
-V@F6W8SRL6D7JAdnKXnnY81
-!s100 hX7:3Ad@bNaoec1][IUoP2
+Z14 DEx4 work 15 weather_station 0 22 Piakc088f6cGoJC]aVPf33
+!i122 14
+l53
+Z15 L16 200
+Z16 V66gA]_FO`7m3Tik`6JMYa3
+Z17 !s100 @hLeV^lDOEA]1<QUlKPUU3
 R7
 32
 R8
 !i10b 1
 R9
 R10
-Z13 !s107 C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/javen-workspace/weather_station.vhd|
-!i113 1
 R11
+!i113 1
 R12
+R13
