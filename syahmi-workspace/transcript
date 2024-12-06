@@ -1,6 +1,343 @@
-# Compile of control_center.vhd failed with 1 errors.
-# Compile of control_center_tb.vhd failed with 1 errors.
-# 2 compiles, 2 failed with 2 errors.
-# Compile of control_center.vhd failed with 21 errors.
-# Compile of control_center_tb.vhd failed with 1 errors.
-# 2 compiles, 2 failed with 22 errors.
+# Compile of control_center.vhd was successful.
+# 1 compiles, 1 failed with no errors.
+# Compile of control_center.vhd was successful.
+# Compile of control_center_reporter.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.control_center_reporter
+# vsim work.control_center_reporter 
+# Start time: 09:13:46 on Dec 06,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.control_center_reporter(behavioral)
+# Loading work.control_center(behavioral)
+# ** Warning: (vsim-3473) Component instance "controller1_inst : station_controller_1" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller2_inst : station_controller_2" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller3_inst : station_controller_3" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+add wave -position insertpoint sim:/control_center_reporter/*
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+add wave -position insertpoint sim:/control_center_reporter/*
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3473) Component instance "controller1_inst : station_controller_1" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller2_inst : station_controller_2" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller3_inst : station_controller_3" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+force -freeze sim:/control_center_reporter/CLK 1 0, 0 {50 ps} -r 100
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# Compile of control_center.vhd failed with 3 errors.
+# Compile of control_center_reporter.vhd was successful.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of control_center.vhd failed with 3 errors.
+# Compile of control_center_reporter.vhd was successful.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of control_center.vhd failed with 3 errors.
+# Compile of control_center_reporter.vhd was successful.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of control_center.vhd was successful.
+# Compile of control_center_reporter.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.control_center_reporter
+# End time: 09:16:56 on Dec 06,2024, Elapsed time: 0:03:10
+# Errors: 0, Warnings: 29
+# vsim work.control_center_reporter 
+# Start time: 09:16:56 on Dec 06,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.control_center_reporter(behavioral)
+# Loading work.control_center(behavioral)
+# ** Warning: (vsim-3473) Component instance "controller1_inst : station_controller_1" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller2_inst : station_controller_2" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller3_inst : station_controller_3" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+add wave -position insertpoint sim:/control_center_reporter/*
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# Compile of control_center.vhd was successful.
+# Compile of control_center_reporter.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.control_center_reporter
+# End time: 09:18:49 on Dec 06,2024, Elapsed time: 0:01:53
+# Errors: 0, Warnings: 26
+# vsim work.control_center_reporter 
+# Start time: 09:18:49 on Dec 06,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.control_center_reporter(behavioral)
+# Loading work.control_center(behavioral)
+# ** Warning: (vsim-3473) Component instance "controller1_inst : station_controller_1" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller2_inst : station_controller_2" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller3_inst : station_controller_3" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+add wave -position insertpoint sim:/control_center_reporter/*
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# Compile of control_center.vhd was successful.
+# Compile of control_center_reporter.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of control_center.vhd was successful.
+# Compile of control_center_reporter.vhd was successful.
+# Compile of station_controller_1.vhd was successful.
+# Compile of weather_station.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.control_center_reporter
+# End time: 09:21:21 on Dec 06,2024, Elapsed time: 0:02:32
+# Errors: 0, Warnings: 29
+# vsim work.control_center_reporter 
+# Start time: 09:21:21 on Dec 06,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.control_center_reporter(behavioral)
+# Loading work.control_center(behavioral)
+# Loading ieee.std_logic_textio(body)
+# Loading work.station_controller_1(behavioral)
+# Loading work.weather_station(behavioral)
+# ** Warning: (vsim-3473) Component instance "controller2_inst : station_controller_2" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller3_inst : station_controller_3" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+add wave -position insertpoint sim:/control_center_reporter/*
+run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3020 ns  Iteration: 0  Instance: /control_center_reporter
+# Break key hit
+# Simulation stop requested.
+# Compile of control_center.vhd was successful.
+# Compile of control_center_reporter.vhd was successful.
+# Compile of station_controller_1.vhd was successful.
+# Compile of weather_station.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.control_center_reporter
+# End time: 09:22:51 on Dec 06,2024, Elapsed time: 0:01:30
+# Errors: 0, Warnings: 18
+# vsim work.control_center_reporter 
+# Start time: 09:22:51 on Dec 06,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.control_center_reporter(behavioral)
+# Loading work.control_center(behavioral)
+# Loading ieee.std_logic_textio(body)
+# Loading work.station_controller_1(behavioral)
+# Loading work.weather_station(behavioral)
+# ** Warning: (vsim-3473) Component instance "controller2_inst : station_controller_2" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+# ** Warning: (vsim-3473) Component instance "controller3_inst : station_controller_3" is not bound.
+#    Time: 0 ps  Iteration: 0  Instance: /control_center_reporter/uut File: C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/control_center.vhd
+add wave -position insertpoint sim:/control_center_reporter/*
+run -all
+# End time: 09:23:47 on Dec 06,2024, Elapsed time: 0:00:56
+# Errors: 0, Warnings: 3
+# Closing project C:/Users/Syahmi/Documents/College/3rd Term/Digital-Systems-Lab/FinalProjectPSD-PA18/syahmi-workspace/Finpro.mpf

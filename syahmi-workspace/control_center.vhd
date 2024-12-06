@@ -3,53 +3,62 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use STD.TEXTIO.ALL;
 
-entity Weather_Control_Center is
+entity control_center is
     Port (
-        CLK          : in std_logic;        
-        RESET        : in std_logic;        
-        packet_in    : in std_logic_vector(63 downto 0); 
-        data_ready   : in std_logic 
+        CLK              : in std_logic;
+        RESET            : in std_logic;
+        instruction      : in std_logic_vector(7 downto 0);
+        active_report    : out std_logic_vector(63 downto 0)
     );
-end Weather_Control_Center;
+end control_center;
 
-architecture Behavioral of Weather_Control_Center is
-
-    signal opcode    : std_logic_vector(5 downto 0);
-    signal status    : std_logic_vector(1 downto 0);
+architecture Behavioral of control_center is
     signal source    : std_logic_vector(1 downto 0);
+    signal status    : std_logic_vector(1 downto 0);
+    signal opcode    : std_logic_vector(5 downto 0);
     signal timestamp : std_logic_vector(5 downto 0);
     signal temp_data, light_data, moist_data : std_logic_vector(15 downto 0);
+    signal active_packet : std_logic_vector(63 downto 0);  -- Use this internal signal for packet assignment
+    signal packet_report_1, packet_report_2, packet_report_3 : std_logic_vector(63 downto 0); -- Internal signals for packets
 
-    type state_type is (Idle, Decode, Format, Writing);
+    type state_type is (Idle, Send_Inst, Read_Pack, Decode, Report_Pack);
     signal current_state, next_state : state_type;
 
-    file data_file : text open write_mode is "weather_data.csv";
-    variable line_buffer : line;
-
-    signal formatted_data : std_logic_vector(127 downto 0);
-
-    component Packet_Decoder is
-        Port (
-            packet_in    : in std_logic_vector(63 downto 0);
-            opcode       : out std_logic_vector(5 downto 0);
-            status       : out std_logic_vector(1 downto 0);
-            source       : out std_logic_vector(1 downto 0);
-            timestamp    : out std_logic_vector(5 downto 0);
-            temp_data    : out std_logic_vector(15 downto 0);
-            light_data   : out std_logic_vector(15 downto 0);
-            moist_data   : out std_logic_vector(15 downto 0)
-        );
-    end component;
+    procedure decode_instruction(signal instr : in std_logic_vector(7 downto 0);
+                                 signal instruct_1, instruct_2, instruct_3 : out std_logic_vector(7 downto 0)) is
+        variable temp_instr : std_logic_vector(7 downto 0);
+    begin
+        temp_instr := instr; 
+        
+        case temp_instr(7 downto 6) is
+            when "01" =>  
+                instruct_1 <= temp_instr;
+                instruct_2 <= (others => '0');
+                instruct_3 <= (others => '0');
+            when "10" => 
+                instruct_1 <= (others => '0');
+                instruct_2 <= temp_instr;
+                instruct_3 <= (others => '0');
+            when "11" =>  
+                instruct_1 <= (others => '0');
+                instruct_2 <= (others => '0');
+                instruct_3 <= temp_instr;
+            when others => 
+                instruct_1 <= (others => '0');
+                instruct_2 <= (others => '0');
+                instruct_3 <= (others => '0');
+        end case;
+    end procedure;
 
     procedure decode_packet(
-        packet_in    : in std_logic_vector(63 downto 0);
-        opcode       : out std_logic_vector(5 downto 0);
-        status       : out std_logic_vector(1 downto 0);
-        source       : out std_logic_vector(1 downto 0);
-        timestamp    : out std_logic_vector(5 downto 0);
-        temp_data    : out std_logic_vector(15 downto 0);
-        light_data   : out std_logic_vector(15 downto 0);
-        moist_data   : out std_logic_vector(15 downto 0)
+        signal packet_in   : in std_logic_vector(63 downto 0);
+        signal opcode    : out std_logic_vector(5 downto 0);
+        signal status    : out std_logic_vector(1 downto 0);
+        signal source    : out std_logic_vector(1 downto 0);
+        signal timestamp : out std_logic_vector(5 downto 0);
+        signal temp_data    : out std_logic_vector(15 downto 0);
+        signal light_data   : out std_logic_vector(15 downto 0);
+        signal moist_data   : out std_logic_vector(15 downto 0)
     ) is
     begin
         source    <= packet_in(63 downto 62);
@@ -61,58 +70,118 @@ architecture Behavioral of Weather_Control_Center is
         moist_data<= packet_in(15 downto 0); 
     end procedure;
 
+    component station_controller_1 is
+        port (
+            CLK             : in std_logic;  
+            instruction     : in std_logic_vector(7 downto 0);
+            packet_report   : out std_logic_vector(63 downto 0)
+        );
+    end component;
+
+    component station_controller_2 is
+        port (
+            CLK             : in std_logic;  
+            instruction     : in std_logic_vector(7 downto 0);
+            packet_report   : out std_logic_vector(63 downto 0)
+        );
+    end component;
+
+    component station_controller_3 is
+        port (
+            CLK             : in std_logic;  
+            instruction     : in std_logic_vector(7 downto 0);
+            packet_report   : out std_logic_vector(63 downto 0)
+        );
+    end component;
+
+    signal instruct_station_1 : std_logic_vector(7 downto 0);
+    signal instruct_station_2 : std_logic_vector(7 downto 0);
+    signal instruct_station_3 : std_logic_vector(7 downto 0);
+
 begin
-    decoder_inst : Packet_Decoder
-        Port map (
-            packet_in    => packet_in,
-            opcode       => opcode,
-            status       => status,
-            source       => source,
-            timestamp    => timestamp,
-            temp_data    => temp_data,
-            light_data   => light_data,
-            moist_data   => moist_data
+
+    controller1_inst: station_controller_1 
+        Port map(
+            CLK => CLK,
+            instruction => instruct_station_1,
+            packet_report => packet_report_1
         );
 
-    process(CLK, RESET)
+    controller2_inst: station_controller_2
+        Port map(
+            CLK => CLK,
+            instruction => instruct_station_2,
+            packet_report => packet_report_2
+        );
+
+    controller3_inst: station_controller_3
+        Port map(
+            CLK => CLK,
+            instruction => instruct_station_3,
+            packet_report => packet_report_3
+        );
+
+    state_machine: process(CLK, RESET)
     begin
         if RESET = '1' then
             current_state <= Idle;
+            opcode <= (others => '0');
+            status <= (others => '0');
+            source <= (others => '0');
+            timestamp <= (others => '0');
+            temp_data <= (others => '0');
+            light_data <= (others => '0');
+            moist_data <= (others => '0');
+            instruct_station_1 <= (others => '0');
+            instruct_station_2 <= (others => '0');
+            instruct_station_3 <= (others => '0');
         elsif rising_edge(CLK) then
             current_state <= next_state;
+            case current_state is
+                when Idle =>
+                    if instruction /= "00000000" then  
+                        next_state <= Send_Inst;
+                    else
+                        current_state <= Idle;
+                    end if;
+                
+                when Send_Inst =>
+                    decode_instruction(instruction, instruct_station_1, instruct_station_2, instruct_station_3);
+                    next_state <= Read_Pack;
+                
+                when Read_Pack =>
+                    case instruction(7 downto 6) is
+                        when "01" =>
+                            active_packet <= packet_report_1;
+                        when "10" =>
+                            active_packet <= packet_report_2;
+                        when "11" =>
+                            active_packet <= packet_report_3;
+                        when others =>
+                            active_packet <= (others => '0');
+                    end case;   
+                    next_state <= Decode;
+                
+                when Decode =>
+                    decode_packet(
+                        active_packet, 
+                        opcode, 
+                        status, 
+                        source, 
+                        timestamp, 
+                        temp_data, 
+                        light_data, 
+                        moist_data
+                    );
+                    next_state <= Report_Pack;
+
+                when Report_Pack =>
+                    active_report <= active_packet;
+                    next_state <= Idle;
+                
+                when others =>
+                    next_state <= Idle;
+            end case;
         end if;
     end process;
-
-    process(current_state, data_ready, opcode, status, source, timestamp, temp_data, light_data, moist_data)
-    begin
-        next_state <= current_state;
-
-        case current_state is
-            when Idle =>
-                if data_ready = '1' then
-                    next_state <= Decode;
-                end if;
-
-            when Decode =>
-                decode_packet(packet_in, opcode, status, source, timestamp, temp_data, light_data, moist_data);
-                next_state <= Format;
-
-            when Format =>
-                formatted_data <= source & status & opcode & timestamp & 
-                                  temp_data & light_data & moist_data;
-                next_state <= writing;
-
-            when writing =>
-                write(line_buffer, source & ",");
-                write(line_buffer, status & ",");
-                write(line_buffer, opcode & ",");
-                write(line_buffer, timestamp & ",");
-                write(line_buffer, integer'image(to_integer(unsigned(temp_data))) & ",");
-                write(line_buffer, integer'image(to_integer(unsigned(light_data))) & ",");
-                write(line_buffer, integer'image(to_integer(unsigned(moist_data))));
-                writeline(data_file, line_buffer);
-                next_state <= Idle;
-        end case;
-    end process;
-
 end Behavioral;
