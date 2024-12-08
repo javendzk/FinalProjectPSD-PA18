@@ -13,10 +13,13 @@ entity control_center is
 end control_center;
 
 architecture Behavioral of control_center is
-    constant QUEUE_DEPTH : integer := 12;  
+    --besar dari queue
+    constant QUEUE_DEPTH : integer := 6;  
     
+    --membuat array dari std_logic_vector sebagai queue paket
     type packet_queue_type is array (0 to QUEUE_DEPTH-1) of std_logic_vector(63 downto 0);
     
+    --membuat sinyal-sinyal queue
     signal packet_queue : packet_queue_type;
     signal queue_head : integer range 0 to QUEUE_DEPTH-1 := 0;
     signal queue_tail : integer range 0 to QUEUE_DEPTH-1 := 0;
@@ -24,6 +27,7 @@ architecture Behavioral of control_center is
     signal queue_empty : std_logic := '0';
     signal queue_full : std_logic := '0';
 
+    --sinyal-sinyal dari sensor
     signal source    : std_logic_vector(1 downto 0);
     signal status    : std_logic_vector(1 downto 0);
     signal opcode    : std_logic_vector(5 downto 0);
@@ -31,17 +35,21 @@ architecture Behavioral of control_center is
     signal temp_data, light_data, moist_data : std_logic_vector(15 downto 0);
     signal active_packet : std_logic_vector(63 downto 0);
 
+    --sinyal packet report dari tiap station
     signal packet_report_1 : std_logic_vector(63 downto 0);
     signal packet_report_2 : std_logic_vector(63 downto 0);
     signal packet_report_3 : std_logic_vector(63 downto 0);
 
+    --instruction untuk tiap station
     signal instruct_station_1 : std_logic_vector(7 downto 0);
     signal instruct_station_2 : std_logic_vector(7 downto 0);
     signal instruct_station_3 : std_logic_vector(7 downto 0);
 
+    --state-state
     type state_type is (Idle, Send_Inst, Read_Pack, Queue_All_Packs, Dequeue_Pack, Decode, Report_Pack);
     signal current_state, next_state : state_type;
 
+    --definisi komponen-komponen station controller 1-3
     component station_controller_1 is
         port (
             CLK             : in std_logic;  
@@ -66,6 +74,7 @@ architecture Behavioral of control_center is
         );
     end component;
 
+    --procedure untuk memberikan instruksi pada stasiun yang sesuai
     procedure decode_instruction(
         signal instr : in std_logic_vector(7 downto 0);
         signal instruct_1, instruct_2, instruct_3 : out std_logic_vector(7 downto 0)
@@ -88,6 +97,7 @@ architecture Behavioral of control_center is
         end case;
     end procedure;
 
+    --melakukan decoding untuk paket 64 bit ke sinyal-sinyal yang sesuai
     procedure decode_packet(
         signal packet_in   : in std_logic_vector(63 downto 0);
         signal opcode    : out std_logic_vector(5 downto 0);
@@ -110,6 +120,7 @@ architecture Behavioral of control_center is
 
 
 begin
+    --instantiasi ketiga controller
     controller1_inst: station_controller_1 
         Port map(
             CLK => CLK,
@@ -131,6 +142,7 @@ begin
             packet_report => packet_report_3
         );
 
+    --proses untuk masuk ke next-state
     state_register: process(CLK, RESET)
     begin
         if RESET = '1' then
@@ -140,6 +152,7 @@ begin
         end if;
     end process state_register;
 
+    --logika next-state nya
     next_state_logic: process(current_state, instruction, queue_count, 
                                packet_report_1, packet_report_2, packet_report_3)
     begin        
@@ -180,15 +193,18 @@ begin
         end case;
     end process next_state_logic;
 
+    --proses yang menjelaskan apa yang dilakukan pada tiap state 
     state_actions: process(CLK, RESET)
     begin
+        --insiialisasi queue
         if RESET = '1' then
             queue_head <= 0;
             queue_tail <= 0;
             queue_count <= 0;
             queue_full <= '0';
             queue_empty <= '1';
-            
+
+            --inisialisasi sinyal-sinyal menjadi 0
             active_report <= (others => '0');
             opcode <= (others => '0');
             status <= (others => '0');
@@ -202,6 +218,7 @@ begin
             instruct_station_3 <= (others => '0');
             
         elsif rising_edge(CLK) then
+            --untuk menentukan apakah queue sudah penuh atau kosong
             if queue_count = QUEUE_DEPTH then
                 queue_full <= '1';
             else 
@@ -215,6 +232,7 @@ begin
             end if;
                         
             case current_state is
+                -- memberikan instruksi pada stasiun yang sesuai
                 when Send_Inst =>
                     decode_instruction(
                         instruction, 
@@ -222,6 +240,7 @@ begin
                         instruct_station_2, 
                         instruct_station_3);
                 
+                --membaca paket sekaligus meletakannya pada queue
                 when Read_Pack =>
                     if queue_count < QUEUE_DEPTH - 2 then
                         packet_queue(queue_tail) <= packet_report_1;
@@ -231,6 +250,7 @@ begin
                         queue_count <= queue_count + 3;
                     end if;
                 
+                --melakukan dequeue paket dan menjadikannya paket aktif
                 when Dequeue_Pack =>
                     if queue_count > 0 then
                         active_packet <= packet_queue(queue_head);
@@ -238,6 +258,7 @@ begin
                         queue_count <= queue_count - 1;
                     end if;
                 
+                --melakukan decoding dari paket yang aktif
                 when Decode =>
                     decode_packet(
                         active_packet, 
@@ -250,6 +271,7 @@ begin
                         moist_data
                     );
                 
+                --melakukan reporting, yaitu menghubungkan paket aktif ini menjadi siap untuk direport pada reporter
                 when Report_Pack =>
                     active_report <= active_packet;
                 
