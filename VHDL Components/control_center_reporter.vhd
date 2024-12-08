@@ -206,6 +206,32 @@ begin
         wait for CLK_period/2;
     end process;
 
+    UUT: process
+    begin
+        --inisialisasi
+        RESET <= '1';
+        instruction <= (others => '0');
+        write_csv_header(output_file);
+        wait for CLK_period * 10;
+
+        RESET <= '0';
+        wait for CLK_period;
+
+        --Test Case 1: Station 1, Idle
+        instruction <= "01000001";
+        wait for CLK_period * 10;
+
+        --Test Case 2: Station 2, Run all sensors
+        instruction <= "10000010";
+        wait for CLK_period * 10;
+
+        --Test Case 3: Station 3, Run temp only
+        instruction <= "11000110";
+        wait for CLK_period * 10;
+
+        wait;
+    end process;
+
     --proses untuk menulis header dan paket ke csv, juga melakukan decoding packet
     --kepada sinyal yang sesuai
     report_writer: process(CLK, RESET)

@@ -1,31 +1,33 @@
-Source; Status;Opcode;Timestamp; SensorType1; SensorStatus1; SensorFlag1; Temp Data; SensorType2; SensorStatus2; SensorFlag2; Light Data; SensorType3; SensorStatus3; SensorFlag3; Moisture Data
-1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;2;Temperature;Enabled;0;28;Light;Enabled;0;Night;Moisture;Enabled;0;2000
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;8;Temperature;Enabled;0;35;Light;Enabled;0;Night;Moisture;Enabled;1;352
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;16;Temperature;Enabled;0;32;Light;Enabled;0;Night;Moisture;Enabled;1;252
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;22;Temperature;Enabled;0;29;Light;Enabled;0;Night;Moisture;Enabled;1;152
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;28;Temperature;Enabled;0;27;Light;Enabled;0;Day;Moisture;Enabled;0;850
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;34;Temperature;Enabled;0;31;Light;Enabled;0;Day;Moisture;Enabled;0;2000
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;42;Temperature;Enabled;0;31;Light;Enabled;0;Day;Moisture;Enabled;0;1000
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;48;Temperature;Enabled;0;27;Light;Enabled;0;Day;Moisture;Enabled;0;1900
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-1;Running;2;54;Temperature;Enabled;0;30;Light;Enabled;0;Night;Moisture;Enabled;1;252
-2;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
-3;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0;0
+Source;Status;Opcode;Timestamp;SensorType1;SensorStatus1;SensorFlag1;TempData;SensorType2;SensorStatus2;SensorFlag2;LightData;SensorType3;SensorStatus3;MoistureData
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;2;Temperature;Enabled;0;28;Light;Enabled;0;Night;Moisture;Enabled;850
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;8;Temperature;Enabled;0;35;Light;Enabled;0;Night;Moisture;Enabled;2500
+3;Running;6;2;Temperature;Enabled;0;28;Light;Disabled;0;Night;Moisture;Disabled;0
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;16;Temperature;Enabled;0;30;Light;Enabled;0;Day;Moisture;Enabled;1100
+3;Running;6;8;Temperature;Enabled;0;31;Light;Disabled;0;Night;Moisture;Disabled;0	
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;22;Temperature;Enabled;0;26;Light;Enabled;0;Night;Moisture;Enabled;1900
+3;Running;6;16;Temperature;Enabled;0;32;Light;Disabled;0;Night;Moisture;Disabled;0
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;28;Temperature;Enabled;0;35;Light;Enabled;0;Day;Moisture;Enabled;2200
+3;Running;6;22;Temperature;Enabled;0;31;Light;Disabled;0;Night;Moisture;Disabled;0
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;34;Temperature;Enabled;0;26;Light;Enabled;0;Day;Moisture;Enabled;900
+3;Running;6;28;Temperature;Enabled;0;28;Light;Disabled;0;Night;Moisture;Disabled;0
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;42;Temperature;Enabled;0;32;Light;Enabled;0;Night;Moisture;Enabled;2200
+3;Running;6;34;Temperature;Enabled;0;35;Light;Disabled;0;Night;Moisture;Disabled;0
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;48;Temperature;Enabled;0;29;Light;Enabled;0;Day;Moisture;Enabled;1050
+3;Running;6;42;Temperature;Enabled;0;33;Light;Disabled;0;Night;Moisture;Disabled;0
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;54;Temperature;Enabled;0;34;Light;Enabled;0;Day;Moisture;Enabled;1000
+3;Running;6;48;Temperature;Enabled;0;32;Light;Disabled;0;Night;Moisture;Disabled;0
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;60;Temperature;Enabled;0;35;Light;Enabled;0;Day;Moisture;Enabled;2400
+3;Running;6;54;Temperature;Enabled;0;29;Light;Disabled;0;Night;Moisture;Disabled;0
+1;Idle;1;0;Unknown;No Status;0;0;Unknown;No Status;0;Night;Unknown;No Status;0
+2;Running;2;4;Temperature;Enabled;0;28;Light;Enabled;0;Night;Moisture;Enabled;1900
+3;Running;6;60;Temperature;Enabled;0;30;Light;Disabled;0;Night;Moisture;Disabled;0
