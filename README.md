@@ -1,94 +1,74 @@
-# FinalProjectPSD-PA18 - IOT Weather Station & Center
+# 🌦️ Final Project Digital System Design - IoT Remote Weather Station & Centralized Control Center
 
-## Background
+Welcome to the **IoT Remote Weather Station & Centralized Control Center** project repository! This project focuses on developing an IoT-based weather monitoring system integrated with a centralized control center. It leverages VHDL and FSM concepts to process and report real-time environmental data such as temperature, humidity, and light intensity.
 
-Dalam pengembangan sistem modern berbasis perangkat keras, kebutuhan akan monitoring dan pengendalian lingkungan telah menjadi salah satu aspek penting. Salah satu implementasi dalam bidang ini adalah Weather Station, sebuah sistem stasiun cuaca yang dirancang menggunakan VHDL. Sistem ini berfungsi untuk mengumpulkan data lingkungan dari berbagai sensor dan mengirimkannya dalam format ke Control Center.
+## 🌍 Project Background
+Indonesia, as a disaster-prone country located on the Pacific Ring of Fire, recorded 1,300 disasters as of September 2024. To address this challenge, a more advanced and responsive system is needed, such as the development of IoT-based Weather Stations integrated with a control center. This technology enables real-time weather monitoring with high accuracy using sensors for temperature, humidity, and light intensity. The data transmitted directly to the control center can be used to detect weather patterns, predict disasters, and provide early warnings to reduce the impact of disasters.
 
-Weather Station ini mengendalikan Finite State Machine atau FSM dengan beberapa state, yaitu: Idle, Encode, Report, dan Read_Inst. Setiap state dirancang untuk menjalankan fungsi seperti menerima instruksi, membaca data pada sensor mengolah data menjadi paket yang terkode, dan mengirimkan laporan ke Control Center.
+Through historical data collection and continuous monitoring, this system can improve disaster prediction accuracy and support more effective mitigation efforts. The implementation of IoT technology and a centralized control system is expected to build a strong disaster management ecosystem, reducing risks, economic losses, and saving more lives in the future.
 
-Sistem ini dapat mengaktifkan tiga jenis sensor, yaitu sensor suhu, sensor intensitas cahaya, dan kelembapan. Masing-masing sensor mengirimkan data 16-bit ke Weather Station untuk diproses. Data ini kemudia dikemas dalam format 64-bit yang berisi berbagai komponen seperti status, opcode, dan informasi waktu.
+## 🚀 Project Overview
 
-Keunggulan dari Weather Station adalah kemampuannya untuk menjalankan instruksi secara real-time, beradaptasi dengan perubahan instruksi yang masuk, dan menghasilkan laporan berkala berdasarkan data lingkungan yang terpantau.
+The **IoT Remote Weather Station** reads data from sensors and sends it to the centralized control center for analysis. The system includes:
+1. **Weather Station**: Reads sensor data and processes it using FSM.
+2. **Station Controllers**: Manage sensor data and forward reports.
+3. **Central Control Center**: Decodes incoming reports, processes data, and logs observations in CSV format.
 
-## How it works
+## 🧩 Key Modules and Features
+### 🔹 Weather Station
+- Reads data from temperature, humidity, and light sensors.
+- Implements **FSM** to manage different operational states:
+  - **Idle**: Waiting for instructions.
+  - **Read Instructions**: Fetch operation codes.
+  - **Encode**: Encode sensor data.
+  - **Generate Report**: Create a 64-bit packet report.
 
-Pertama-tama weathe station akan melakuakn instantiate 3 buah komponen, yaitu: `sensor_temprature`, `sensor_daylight`, dan `sensor_moisture`. Untuk port dari semua sensor sama, yaitu 1 out untuk mengirim 16-bit data ke `Weather_Station` dan akan melakukan port mapping dengan ketiga komponen tersebut.
+### 🔹 Station Controllers
+- Reads sensor data (CSV format) and sends it to the weather station.
+- Calculates **moisture** data based on mass and volume.
+- Ensures synchronization of data flow.
 
-Saat Idle, Weather_Station akan mengirim packet 1 kali setelah di idle kan ke report, dengan membuat semua packet yang 64-bit itu menjadi 0 semua kecuali source `Weather_Station`, `stasus`, `opcode`, dan clock cycle saat ia di idle kan. Pada bagian ini, menunggu instruksi run dari Control Center.
+### 🔹 Centralized Control Center
+- Decodes and validates 64-bit packet reports.
+- Logs reports in a CSV file.
+- Provides **operation instructions** to station controllers.
 
-Selama idle, ia akan menunggu adanya input instruksi di port instruction IN. Jika ada, makan ia akan masuk ke state Read_Inst dan membaca instruction nya berdasarkanopcode pada packets encoding. Bisa menggunakan function atau sebagainya jika instruction nya adalah 000010 ~ 001000, maka akan masuk ke state decode.
+## ⚙️ System Implementation
 
-Untuk state decode, ia akan membuat laporan 64-bit yang terdiri dari komponen-komponen di  penjelasan packet encoding, dan juga mengikuti instruction untuk mengecek bacaan sensor yang tidak dianggap. setelah pembuatan packet 64-bit ini sudah selesai, maka masuk ke state report.
+### 🔹 Instruction Set (Opcodes)
+| **Opcode** | **Description**                  |
+|------------|----------------------------------|
+| 000001     | Idle                             |
+| 000010     | Run All Sensors                  |
+| 000011     | Run Without Temperature          |
+| 000100     | Run Without Light                |
+| 000101     | Run Without Moisture             |
+| 000110     | Run Temperature Only             |
+| 000111     | Run Light Only                   |
+| 001000     | Run Moisture Only                |
 
-di state report, mengirim 64-bit data tersebut ke port packet_report. Setelah berhasil, maka akan mulai membaca sensor -> decode -> report -> read -> decode -> report sampai ada intruksi bari di port instruction.
+### 🔹 Packet Report Structure (64-bits)
+| Bits       | Description                |
+|------------|----------------------------|
+| 63-62      | Source Station ID          |
+| 61-60      | System Status              |
+| 59-54      | Operation Code             |
+| 53-48      | Timestamp                  |
+| 47-32      | Temperature Data (16-bits)  |
+| 31-16      | Light Intensity Data (16-bits)|
+| 15-0       | Moisture Data (16-bits)     |
 
-Jika ada instruksi baru atau perubahan pada port instruction, maka akan abort apapun yang sedang dilakukan dan masuk ke Read_Inst, membaca intruksi, mengartikan instruksi, dan seterusnya.
+## 👨‍💻 Group Members
+#### 🔹 **Javana Muhammad Dzaki** - 2306161826
+#### 🔹 **Benedict Aurelius** - 2306209095
+#### 🔹 **Syahmi Hamdani** - 2306220532
+#### 🔹 **Muhamad Rey Kafaka Fadlan** - 2306250573
 
-## How it use
-
-#### Sensor data packet: 16-bit length
-
-AA B C DDDDDDDDDDD
-- A:  2-bit
-
-|    | 0  | 1  |
-|----|----|----|
-| 0 | No Type | Temperature |
-| 1 | Light | Moisture |
-
-- B: 2-bit
-
-|    | 0  | 1  |
-|----|----|----|
-| 0 | No Status | Running |
-| 1 | Stopped |  |
-
-- C:
-
-1 bit sebagai penanda sign apakah D bernilai positif atau negatif
-
-
-- D: 11-bit data yang dibaca sensor. Rangenya 2408 ~ 2408 (Karena ada sign)
-
-#### instruction 8-bit length
-AA BBBBBB
-
-- A: selector weather station.
-    - 00 = No station,
-    - 01 = Station 1
-    - 10 = Station 2
-    - 11 = Station 3
-
-- B: 5-bit berisi instruksi untuk weather station,
-    - 000000 = No instruction
-        Tidak ada apa-apa
-    - 000001 = Go Idle
-        Memberikan report idle ke `packet_report`, menyebabkan semua bit packet yang 64-bit menjadi 0, **Kecuali** source weather station, status, opcode, dan clock cycle saat di idle kan. Menunggu instruksi run dari control center.
-    - 000010 = Run
-        Melakukan report seperti biasa.
-    - 000011 = Run but stop Temperature
-        Mengabaikan data dari sensor temperature. Akan tetapi komponen sensornya dibiarkan berjalan saja sehingga di packet report bagian data temperature 16-bit, AA nya berstatus Stopped, dan C dan D nya full 0.
-    - 000100 = Run but stop Daylight
-        Sensor daylight dihentikan sementara, tetapi tetap tetap berjalan pada background.
-    - 000101 = Run but stop Moisture
-        Sensor moisture dihentikan sementara, namun tetap aktif di background.
-    - 000110 = Run Temperature Only
-        Hanya sensor temperature yang berjalan. Sedangkan lainnya dihentikan sepenuhnya.
-    - 000111 = Run Daylight Only
-        Hanya sensor daylight yang berjalan. Sedangkan yang lainnya dihentikan sepenuhnya.
-    - 001000 = Run Moisture Only
-        Hanya sensor moisture yang berjalan. Sedangkan yang lainnya dihentikan sepenuhnya.
-
-## Testing
-
-### Wave:
-
-
-
-### FSM:
-
-
-
-### ...
-
-## Authors
+##
+### 📚 References
+#### 🔹 [VHDL CSV File Reader](https://github.com/ricardo-jasinski/vhdl-csv-file-reader)
+#### 🔹 [Bencana Alam di Indonesia](https://databoks.katadata.co.id/demografi/statistik/66d7d7a492e96/ada-1300-bencana-alam-di-ri-sampai-september-2024-ini-rinciannya)
+#### 🔹 [Digital System Design (Digilab)](https://learn.digilabdte.com/books/digital-system-design)
+#### 🔹 [VHDL Structural Modeling Style](https://surf-vhdl.com/vhdl-syntax-web-course-surf-vhdl/vhdl-structural-modeling-style/)
+#### 🔹 [Design of Encoding and Decoding](https://ieeexplore.ieee.org/document/9443744)
+#### 🔹 [Implementing a FSM in VHDL](https://www.allaboutcircuits.com/technical-articles/implementing-a-finite-state-machine-in-vhdl/ )
