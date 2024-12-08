@@ -1,0 +1,461 @@
+Analysis & Synthesis report for station_controller_1
+Sun Dec  8 21:06:59 2024
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |station_controller_1|weather_station:Weather_Station_Inst|next_state
+  9. State Machine - |station_controller_1|weather_station:Weather_Station_Inst|current_state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Port Connectivity Checks: "weather_station:Weather_Station_Inst"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++-----------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status       ; Successful - Sun Dec  8 21:06:59 2024       ;
+; Quartus Prime Version             ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                     ; station_controller_1                        ;
+; Top-level Entity Name             ; station_controller_1                        ;
+; Family                            ; Arria II GX                                 ;
+; Logic utilization                 ; N/A                                         ;
+;     Combinational ALUTs           ; 62                                          ;
+;     Memory ALUTs                  ; 0                                           ;
+;     Dedicated logic registers     ; 67                                          ;
+; Total registers                   ; 67                                          ;
+; Total pins                        ; 73                                          ;
+; Total virtual pins                ; 0                                           ;
+; Total block memory bits           ; 0                                           ;
+; DSP block 18-bit elements         ; 0                                           ;
+; Total GXB Receiver Channel PCS    ; 0                                           ;
+; Total GXB Receiver Channel PMA    ; 0                                           ;
+; Total GXB Transmitter Channel PCS ; 0                                           ;
+; Total GXB Transmitter Channel PMA ; 0                                           ;
+; Total PLLs                        ; 0                                           ;
+; Total DLLs                        ; 0                                           ;
++-----------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                 ;
++---------------------------------------------------------------------------------+----------------------+----------------------+
+; Option                                                                          ; Setting              ; Default Value        ;
++---------------------------------------------------------------------------------+----------------------+----------------------+
+; Top-level entity name                                                           ; station_controller_1 ; station_controller_1 ;
+; Family name                                                                     ; Arria II GX          ; Cyclone V            ;
+; Use smart compilation                                                           ; Off                  ; Off                  ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                   ; On                   ;
+; Enable compact report table                                                     ; Off                  ; Off                  ;
+; Restructure Multiplexers                                                        ; Auto                 ; Auto                 ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                  ; Off                  ;
+; Create Debugging Nodes for IP Cores                                             ; Off                  ; Off                  ;
+; Preserve fewer node names                                                       ; On                   ; On                   ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable               ; Enable               ;
+; Verilog Version                                                                 ; Verilog_2001         ; Verilog_2001         ;
+; VHDL Version                                                                    ; VHDL_1993            ; VHDL_1993            ;
+; State Machine Processing                                                        ; Auto                 ; Auto                 ;
+; Safe State Machine                                                              ; Off                  ; Off                  ;
+; Extract Verilog State Machines                                                  ; On                   ; On                   ;
+; Extract VHDL State Machines                                                     ; On                   ; On                   ;
+; Ignore Verilog initial constructs                                               ; Off                  ; Off                  ;
+; Iteration limit for constant Verilog loops                                      ; 5000                 ; 5000                 ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                  ; 250                  ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                   ; On                   ;
+; Infer RAMs from Raw Logic                                                       ; On                   ; On                   ;
+; Parallel Synthesis                                                              ; On                   ; On                   ;
+; DSP Block Balancing                                                             ; Auto                 ; Auto                 ;
+; NOT Gate Push-Back                                                              ; On                   ; On                   ;
+; Power-Up Don't Care                                                             ; On                   ; On                   ;
+; Remove Redundant Logic Cells                                                    ; Off                  ; Off                  ;
+; Remove Duplicate Registers                                                      ; On                   ; On                   ;
+; Ignore CARRY Buffers                                                            ; Off                  ; Off                  ;
+; Ignore CASCADE Buffers                                                          ; Off                  ; Off                  ;
+; Ignore GLOBAL Buffers                                                           ; Off                  ; Off                  ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                  ; Off                  ;
+; Ignore LCELL Buffers                                                            ; Off                  ; Off                  ;
+; Ignore SOFT Buffers                                                             ; On                   ; On                   ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                  ; Off                  ;
+; Optimization Technique                                                          ; Balanced             ; Balanced             ;
+; Carry Chain Length                                                              ; 70                   ; 70                   ;
+; Auto Carry Chains                                                               ; On                   ; On                   ;
+; Auto Open-Drain Pins                                                            ; On                   ; On                   ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                  ; Off                  ;
+; Auto ROM Replacement                                                            ; On                   ; On                   ;
+; Auto RAM Replacement                                                            ; On                   ; On                   ;
+; Auto DSP Block Replacement                                                      ; On                   ; On                   ;
+; Auto Shift Register Replacement                                                 ; Auto                 ; Auto                 ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                 ; Auto                 ;
+; Auto Clock Enable Replacement                                                   ; On                   ; On                   ;
+; Strict RAM Replacement                                                          ; Off                  ; Off                  ;
+; Allow Synchronous Control Signals                                               ; On                   ; On                   ;
+; Force Use of Synchronous Clear Signals                                          ; Off                  ; Off                  ;
+; Auto RAM Block Balancing                                                        ; On                   ; On                   ;
+; Auto RAM to Logic Cell Conversion                                               ; Off                  ; Off                  ;
+; Auto Resource Sharing                                                           ; Off                  ; Off                  ;
+; Allow Any RAM Size For Recognition                                              ; Off                  ; Off                  ;
+; Allow Any ROM Size For Recognition                                              ; Off                  ; Off                  ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                  ; Off                  ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                   ; On                   ;
+; Ignore translate_off and synthesis_off directives                               ; Off                  ; Off                  ;
+; Timing-Driven Synthesis                                                         ; On                   ; On                   ;
+; Report Parameter Settings                                                       ; On                   ; On                   ;
+; Report Source Assignments                                                       ; On                   ; On                   ;
+; Report Connectivity Checks                                                      ; On                   ; On                   ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                  ; Off                  ;
+; Synchronization Register Chain Length                                           ; 3                    ; 3                    ;
+; Power Optimization During Synthesis                                             ; Normal compilation   ; Normal compilation   ;
+; HDL message level                                                               ; Level2               ; Level2               ;
+; Suppress Register Optimization Related Messages                                 ; Off                  ; Off                  ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                 ; 5000                 ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                 ; 5000                 ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                  ; 100                  ;
+; Clock MUX Protection                                                            ; On                   ; On                   ;
+; Auto Gated Clock Conversion                                                     ; Off                  ; Off                  ;
+; Block Design Naming                                                             ; Auto                 ; Auto                 ;
+; SDC constraint protection                                                       ; Off                  ; Off                  ;
+; Synthesis Effort                                                                ; Auto                 ; Auto                 ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                   ; On                   ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                  ; Off                  ;
+; Analysis & Synthesis Message Level                                              ; Medium               ; Medium               ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                 ; Auto                 ;
+; Resource Aware Inference For Block RAM                                          ; On                   ; On                   ;
++---------------------------------------------------------------------------------+----------------------+----------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                 ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                                                                    ; Library ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------+---------+
+; weather_station.vhd              ; yes             ; User VHDL File        ; C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/weather_station.vhd      ;         ;
+; station_controller_1.vhd         ; yes             ; Auto-Found VHDL File  ; C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd ;         ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++-----------------------------------------------+-----------+
+; Resource                                      ; Usage     ;
++-----------------------------------------------+-----------+
+; Estimated ALUTs Used                          ; 62        ;
+;     -- Combinational ALUTs                    ; 62        ;
+;     -- Memory ALUTs                           ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+; Dedicated logic registers                     ; 67        ;
+;                                               ;           ;
+; Estimated ALUTs Unavailable                   ; 0         ;
+;     -- Due to unpartnered combinational logic ; 0         ;
+;     -- Due to Memory ALUTs                    ; 0         ;
+;                                               ;           ;
+; Total combinational functions                 ; 62        ;
+; Combinational ALUT usage by number of inputs  ;           ;
+;     -- 7 input functions                      ; 0         ;
+;     -- 6 input functions                      ; 10        ;
+;     -- 5 input functions                      ; 26        ;
+;     -- 4 input functions                      ; 11        ;
+;     -- <=3 input functions                    ; 15        ;
+;                                               ;           ;
+; Combinational ALUTs by mode                   ;           ;
+;     -- normal mode                            ; 62        ;
+;     -- extended LUT mode                      ; 0         ;
+;     -- arithmetic mode                        ; 0         ;
+;     -- shared arithmetic mode                 ; 0         ;
+;                                               ;           ;
+; Estimated ALUT/register pairs used            ; 77        ;
+;                                               ;           ;
+; Total registers                               ; 67        ;
+;     -- Dedicated logic registers              ; 67        ;
+;     -- I/O registers                          ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+;                                               ;           ;
+;                                               ;           ;
+; I/O pins                                      ; 73        ;
+;                                               ;           ;
+; DSP block 18-bit elements                     ; 0         ;
+;                                               ;           ;
+; Maximum fan-out node                          ; CLK~input ;
+; Maximum fan-out                               ; 67        ;
+; Total fan-out                                 ; 528       ;
+; Average fan-out                               ; 1.92      ;
++-----------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                   ;
++-------------------------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                        ; Entity Name          ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+------------------------------------------------------------+----------------------+--------------+
+; |station_controller_1                     ; 62 (0)              ; 67 (0)                    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 73   ; 0            ; |station_controller_1                                      ; station_controller_1 ; work         ;
+;    |weather_station:Weather_Station_Inst| ; 62 (62)             ; 67 (67)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |station_controller_1|weather_station:Weather_Station_Inst ; weather_station      ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |station_controller_1|weather_station:Weather_Station_Inst|next_state                                      ;
++----------------------------+----------------------------+-------------------+----------------------+-----------------------+
+; Name                       ; next_state.Generate_Report ; next_state.Encode ; next_state.Read_Inst ; next_state.Idle_State ;
++----------------------------+----------------------------+-------------------+----------------------+-----------------------+
+; next_state.Idle_State      ; 0                          ; 0                 ; 0                    ; 0                     ;
+; next_state.Read_Inst       ; 0                          ; 0                 ; 1                    ; 1                     ;
+; next_state.Encode          ; 0                          ; 1                 ; 0                    ; 1                     ;
+; next_state.Generate_Report ; 1                          ; 0                 ; 0                    ; 1                     ;
++----------------------------+----------------------------+-------------------+----------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |station_controller_1|weather_station:Weather_Station_Inst|current_state                                                  ;
++-------------------------------+-------------------------------+----------------------+-------------------------+--------------------------+
+; Name                          ; current_state.Generate_Report ; current_state.Encode ; current_state.Read_Inst ; current_state.Idle_State ;
++-------------------------------+-------------------------------+----------------------+-------------------------+--------------------------+
+; current_state.Idle_State      ; 0                             ; 0                    ; 0                       ; 0                        ;
+; current_state.Read_Inst       ; 0                             ; 0                    ; 1                       ; 1                        ;
+; current_state.Encode          ; 0                             ; 1                    ; 0                       ; 1                        ;
+; current_state.Generate_Report ; 1                             ; 0                    ; 0                       ; 1                        ;
++-------------------------------+-------------------------------+----------------------+-------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                 ;
++-------------------------------------------------------------------------------+--------------------------------------------------------------------+
+; Register name                                                                 ; Reason for Removal                                                 ;
++-------------------------------------------------------------------------------+--------------------------------------------------------------------+
+; weather_station:Weather_Station_Inst|sensor_temp[15]                          ; Stuck at GND due to stuck port data_in                             ;
+; weather_station:Weather_Station_Inst|sensor_temp[14]                          ; Stuck at VCC due to stuck port data_in                             ;
+; weather_station:Weather_Station_Inst|sensor_temp[0..11]                       ; Stuck at GND due to stuck port data_in                             ;
+; weather_station:Weather_Station_Inst|sensor_light[15]                         ; Stuck at VCC due to stuck port data_in                             ;
+; weather_station:Weather_Station_Inst|sensor_light[0..11,14]                   ; Stuck at GND due to stuck port data_in                             ;
+; weather_station:Weather_Station_Inst|sensor_moist[14,15]                      ; Stuck at VCC due to stuck port data_in                             ;
+; weather_station:Weather_Station_Inst|sensor_moist[0..11]                      ; Stuck at GND due to stuck port data_in                             ;
+; weather_station:Weather_Station_Inst|sensor_temp[12]                          ; Merged with weather_station:Weather_Station_Inst|sensor_temp[13]   ;
+; weather_station:Weather_Station_Inst|sensor_light[12]                         ; Merged with weather_station:Weather_Station_Inst|sensor_light[13]  ;
+; weather_station:Weather_Station_Inst|sensor_moist[12]                         ; Merged with weather_station:Weather_Station_Inst|sensor_moist[13]  ;
+; weather_station:Weather_Station_Inst|packet_report[1..11,16..27,30,32..43,47] ; Merged with weather_station:Weather_Station_Inst|packet_report[0]  ;
+; weather_station:Weather_Station_Inst|packet_report[15,31,46]                  ; Merged with weather_station:Weather_Station_Inst|packet_report[14] ;
+; weather_station:Weather_Station_Inst|packet_report[0]                         ; Stuck at GND due to stuck port data_in                             ;
+; Total Number of Removed Registers = 86                                        ;                                                                    ;
++-------------------------------------------------------------------------------+--------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                              ;
++------------------------------------------------------+---------------------------+-------------------------------------------------------+
+; Register name                                        ; Reason for Removal        ; Registers Removed due to This Register                ;
++------------------------------------------------------+---------------------------+-------------------------------------------------------+
+; weather_station:Weather_Station_Inst|sensor_moist[0] ; Stuck at GND              ; weather_station:Weather_Station_Inst|packet_report[0] ;
+;                                                      ; due to stuck port data_in ;                                                       ;
++------------------------------------------------------+---------------------------+-------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 67    ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------+
+; Inverted Register Statistics                             ;
++------------------------------------------------+---------+
+; Inverted Register                              ; Fan out ;
++------------------------------------------------+---------+
+; weather_station:Weather_Station_Inst|status[1] ; 4       ;
+; Total number of inverted registers = 1         ;         ;
++------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 ALUTs       ; 2 ALUTs              ; 2 ALUTs                ; Yes        ; |station_controller_1|weather_station:Weather_Station_Inst|packet_report[54]   ;
+; 5:1                ; 8 bits    ; 24 ALUTs      ; 0 ALUTs              ; 24 ALUTs               ; Yes        ; |station_controller_1|weather_station:Weather_Station_Inst|prev_instruction[7] ;
+; 64:1               ; 3 bits    ; 126 ALUTs     ; 15 ALUTs             ; 111 ALUTs              ; Yes        ; |station_controller_1|weather_station:Weather_Station_Inst|moist_active        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "weather_station:Weather_Station_Inst" ;
++------------+-------+----------+----------------------------------+
+; Port       ; Type  ; Severity ; Details                          ;
++------------+-------+----------+----------------------------------+
+; data_temp  ; Input ; Info     ; Stuck at GND                     ;
+; data_light ; Input ; Info     ; Stuck at GND                     ;
+; data_moist ; Input ; Info     ; Stuck at GND                     ;
++------------+-------+----------+----------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriaii_ff            ; 67                          ;
+;     ENA               ; 24                          ;
+;     ENA SCLR          ; 2                           ;
+;     plain             ; 41                          ;
+; boundary_port         ; 73                          ;
+; stratixiv_lcell_comb  ; 63                          ;
+;     normal            ; 63                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 26                          ;
+;         6 data inputs ; 10                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.30                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Sun Dec  8 21:06:50 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off station_controller_1 -c station_controller_1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file weather_station.vhd
+    Info (12022): Found design unit 1: weather_station-Behavioral File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/weather_station.vhd Line: 16
+    Info (12023): Found entity 1: weather_station File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/weather_station.vhd Line: 5
+Warning (12125): Using design file station_controller_1.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: station_controller_1-Behavioral File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 15
+    Info (12023): Found entity 1: station_controller_1 File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 7
+Info (12127): Elaborating entity "station_controller_1" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at station_controller_1.vhd(31): object "delay_counter" assigned a value but never read File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 31
+Warning (10036): Verilog HDL or VHDL warning at station_controller_1.vhd(32): object "data_ready" assigned a value but never read File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 32
+Warning (10036): Verilog HDL or VHDL warning at station_controller_1.vhd(77): object "semicolon" assigned a value but never read File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 77
+Info (12128): Elaborating entity "weather_station" for hierarchy "weather_station:Weather_Station_Inst" File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 57
+Warning (10036): Verilog HDL or VHDL warning at weather_station.vhd(20): object "current_instruction" assigned a value but never read File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/weather_station.vhd Line: 20
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "packet_report[0]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[1]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[2]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[3]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[4]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[5]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[6]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[7]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[8]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[9]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[10]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[11]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[16]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[17]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[18]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[19]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[20]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[21]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[22]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[23]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[24]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[25]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[26]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[27]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[30]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[32]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[33]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[34]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[35]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[36]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[37]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[38]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[39]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[40]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[41]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[42]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[43]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+    Warning (13410): Pin "packet_report[47]" is stuck at GND File: C:/Users/DELL/Documents/Perancangan Sistem Digital ENCE603011)/FinalProjectPSD-PA18/finished-to-render/station_controller_1.vhd Line: 11
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 158 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 85 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4888 megabytes
+    Info: Processing ended: Sun Dec  8 21:06:59 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:07
+
+

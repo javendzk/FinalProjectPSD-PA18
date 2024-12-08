@@ -1,0 +1,20 @@
+Analysis & Synthesis Status : Successful - Sun Dec  8 21:06:59 2024
+Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+Revision Name : station_controller_1
+Top-level Entity Name : station_controller_1
+Family : Arria II GX
+Logic utilization : N/A
+    Combinational ALUTs : 62
+    Memory ALUTs : 0
+    Dedicated logic registers : 67
+Total registers : 67
+Total pins : 73
+Total virtual pins : 0
+Total block memory bits : 0
+DSP block 18-bit elements : 0
+Total GXB Receiver Channel PCS : 0
+Total GXB Receiver Channel PMA : 0
+Total GXB Transmitter Channel PCS : 0
+Total GXB Transmitter Channel PMA : 0
+Total PLLs : 0
+Total DLLs : 0

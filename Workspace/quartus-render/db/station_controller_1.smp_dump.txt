@@ -1,0 +1,14 @@
+
+State Machine - |station_controller_1|weather_station:Weather_Station_Inst|next_state
+Name next_state.Generate_Report next_state.Encode next_state.Read_Inst next_state.Idle_State 
+next_state.Idle_State 0 0 0 0 
+next_state.Read_Inst 0 0 1 1 
+next_state.Encode 0 1 0 1 
+next_state.Generate_Report 1 0 0 1 
+
+State Machine - |station_controller_1|weather_station:Weather_Station_Inst|current_state
+Name current_state.Generate_Report current_state.Encode current_state.Read_Inst current_state.Idle_State 
+current_state.Idle_State 0 0 0 0 
+current_state.Read_Inst 0 0 1 1 
+current_state.Encode 0 1 0 1 
+current_state.Generate_Report 1 0 0 1 
