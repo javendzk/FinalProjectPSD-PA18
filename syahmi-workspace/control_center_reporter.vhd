@@ -67,7 +67,7 @@ architecture Behavioral of control_center_reporter is
     procedure write_csv_header(file output_file : text) is
         variable csv_line : line;
     begin
-        write(csv_line, string'("Source, Status,Opcode,Timestamp, SensorType1, SensorStatus1, SensorFlag1, Temp Data, SensorType2, SensorStatus2, SensorFlag2, Light Data, SensorType3, SensorStatus3, SensorFlag3, Moisture Data"));
+        write(csv_line, string'("Source;Status;Opcode;Timestamp;SensorType1;SensorStatus1;SensorFlag1;Temp Data;SensorType2;SensorStatus2;SensorFlag2;Light Data;SensorType3;SensorStatus3;SensorFlag3;Moisture Data"));
         writeline(output_file, csv_line);
     end procedure;
 
@@ -110,21 +110,21 @@ architecture Behavioral of control_center_reporter is
         sensor_flag_3 := active_report(11 downto 11);   
         moist_data_v := active_report(10 downto 0);
 
-        write(csv_line, integer'image(to_integer(unsigned(source_v))) & "," &
-                        status_to_string(status_v) & "," &
-                        integer'image(to_integer(unsigned(opcode_v))) & "," &
-                        integer'image(to_integer(unsigned(timestamp_v))) & "," &
-                        type_to_string(sensor_type_1) & "," &
-                        sensor_status_to_string(sensor_status_1) & "," &
-                        integer'image(to_integer(unsigned(sensor_flag_1))) & "," &
-                        integer'image(to_integer(unsigned(temp_data_v))) & "," &
-                        type_to_string(sensor_type_2) & "," &
-                        sensor_status_to_string(sensor_status_2) & "," &
-                        integer'image(to_integer(unsigned(sensor_flag_2))) & "," &
-                        daylight_to_string(light_data_v) & "," &
-                        type_to_string(sensor_type_3) & "," &
-                        sensor_status_to_string(sensor_status_3) & "," &
-                        integer'image(to_integer(unsigned(sensor_flag_3))) & "," &
+        write(csv_line, integer'image(to_integer(unsigned(source_v))) & ";" &
+                        status_to_string(status_v) & ";" &
+                        integer'image(to_integer(unsigned(opcode_v))) & ";" &
+                        integer'image(to_integer(unsigned(timestamp_v))) & ";" &
+                        type_to_string(sensor_type_1) & ";" &
+                        sensor_status_to_string(sensor_status_1) & ";" &
+                        integer'image(to_integer(unsigned(sensor_flag_1))) & ";" &
+                        integer'image(to_integer(unsigned(temp_data_v))) & ";" &
+                        type_to_string(sensor_type_2) & ";" &
+                        sensor_status_to_string(sensor_status_2) & ";" &
+                        integer'image(to_integer(unsigned(sensor_flag_2))) & ";" &
+                        daylight_to_string(light_data_v) & ";" &
+                        type_to_string(sensor_type_3) & ";" &
+                        sensor_status_to_string(sensor_status_3) & ";" &
+                        integer'image(to_integer(unsigned(sensor_flag_3))) & ";" &
                         integer'image(to_integer(unsigned(moist_data_v))));
         writeline(output_file, csv_line);
     end procedure;

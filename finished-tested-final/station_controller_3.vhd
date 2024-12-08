@@ -74,7 +74,7 @@ begin
         variable mass: integer;
         variable volume: integer;
         variable kelembapan: integer;
-        variable comma: character;
+        variable semicolon: character;
         variable line_count: integer := 0;
         variable data_processed : boolean := false;
         variable opcode : std_logic_vector(5 downto 0);
@@ -84,7 +84,7 @@ begin
 
             if is_valid_opcode(opcode) then
                 if not endfile(input_file) then
-                    -- logika membaca file CSV atau comma seperated value. di line pertama
+                    -- logika membaca file CSV atau semicolon seperated value. di line pertama
                     -- ada kolom header untuk di-skip. Jika tidak, maka membaca per baris 
                     -- dan mengoutput/proses data sesuai jenis
                     if line_count = 0 then
@@ -96,11 +96,11 @@ begin
                     elsif data_processed = false then
                         readline(input_file, row);
                         read(row, suhu);
-                        read(row, comma);
+                        read(row, semicolon);
                         read(row, daylight);
-                        read(row, comma);
+                        read(row, semicolon);
                         read(row, mass);
-                        read(row, comma);
+                        read(row, semicolon);
                         read(row, volume);
 
                         kelembapan := calculate_kelembaban(mass, volume);
