@@ -58,6 +58,11 @@ The **IoT Remote Weather Station** reads data from sensors and sends it to the c
 | 31-16      | Light Intensity Data (16-bits)|
 | 15-0       | Moisture Data (16-bits)     |
 
+## 📝 Project Schematic
+![picture 2](https://i.imgur.com/hTyMF5m.png)   
+![picture 1](https://i.imgur.com/7L0qq1I.png)  
+
+
 ## 👨‍💻 Group Members
 #### 🔹 **Javana Muhammad Dzaki** - 2306161826
 #### 🔹 **Benedict Aurelius** - 2306209095
